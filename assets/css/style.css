@@ -1,0 +1,41 @@
+
+
+    .container {
+        max-width: 960px;
+      }
+    
+    #header {
+        background-color: pink;
+    }
+
+    #instructions {
+        background-color: #c8f442;
+    }
+
+    #randomNum {
+        background-color: pink;
+    }
+
+    #winsDisplay {
+        background-color: #c8f442;
+    }
+
+    .crystal {
+        float: left;
+        width: 200px;
+        height: 200px;
+        border: solid 2px;
+      }
+
+    #scoreMessage { 
+        clear: both;
+        background-color:  pink;
+
+    }
+
+    #scoreDisplay {
+        background-color: pink;
+    }
+
+    
+
