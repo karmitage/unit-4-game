@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     //***Global Variables******************/
 
-    var randNum = Math.floor(Math.random() * 121 + 19);
+    var randNum = Math.floor(Math.random() * 120 + 19);
     var wins = 0;
     var losses = 0;
     var totalScore = 0;
@@ -61,11 +61,15 @@ $(document).ready(function () {
                 resetGame();
             }
 
-            //if the user's score exceeds the random nums 
+            //if the user's score exceeds the random number
 
             else if (totalScore > randNum) {
                 losses++;
                 resetGame();
+            }
+
+            else {
+                //do nothing to allow the game to continue
             }
         }
     }
