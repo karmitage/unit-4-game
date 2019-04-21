@@ -10,23 +10,23 @@ $(document).ready(function () {
 
     //*** Functions ************************/
 
-    // //Returns a random number between min (inclusive) and max (exclusive)
+    //Returns a random number between min and max
 
-    // function getRandomNum(min, max) {
-    //     return Math.floor(Math.random() * max + min);
-    // }
+    function getRandomNum(min, max) {
+        return Math.floor(Math.random() * max + min);
+    }
 
     //Resets the game
 
     function resetGame() {
 
         //set random number to match
-        randNum = Math.floor(Math.random() * 120 + 19);
+        randNum = getRandomNum(19, 120);
         //set crystal values using an array
-        crystalValues[0] = Math.floor(Math.random() * 12 + 1);
-        crystalValues[1] = Math.floor(Math.random() * 12 + 1);
-        crystalValues[2] = Math.floor(Math.random() * 12 + 1);
-        crystalValues[3] = Math.floor(Math.random() * 12 + 1);
+        crystalValues[0] = getRandomNum(1, 12);
+        crystalValues[1] = getRandomNum(1, 12);
+        crystalValues[2] = getRandomNum(1, 12);
+        crystalValues[3] = getRandomNum(1, 12);
         //set total score
         totalScore = 0;
 
@@ -46,7 +46,7 @@ $(document).ready(function () {
 
 
     }
-    //create a handler function that increments the score and updates wins/losses, depending on which crystal was clicked
+    //create a function that returns another function that increments the score and updates wins/losses, depending on which crystal was clicked
 
     function getCrystalHandler(crystalKey) {
         return function () {
@@ -77,7 +77,7 @@ $(document).ready(function () {
     //call resetGame function to begin
     resetGame();
 
-    //Create on click functions for the crystal class
+    //Create on click functions for the crystals that pass the crystal's value (from the array) 
     $("#crystalOne").on("click", getCrystalHandler(0));
     $("#crystalTwo").on("click", getCrystalHandler(1));
     $("#crystalThree").on("click", getCrystalHandler(2));
